@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BTC Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Set the viewport meta tag to ensure proper rendering on mobile devices */
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+/* Set a base font size for the document */
+html {
+  font-size: 16px;
+}
+/* Use media queries to adjust font sizes and other styles based on screen width */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+/* Set a maximum width for the content container to prevent it from becoming too wide on large screens */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Use responsive images to ensure they scale properly on different screen sizes */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #3E8E41;
+        margin: 0;
+        padding: 0;
+        background-color:black;
+                min-height: 70vh;
+                width: 70vw;
+                align-items: center;
+                background-size: cover;
+                background-position: center;
+      }
+      
+      h1 {
+        text-align: center;
+      }
+      .purchase-button{
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                color: blueviolet;
+                background-color: yellowgreen;
+                align-content: center;
+                display: block;
+                margin: auto;
+                margin-top: 50px;
+                width: 450px;
+                height: 70px;
+            }
+            .button-a:hover{
+                background-color: blue;
+                color: aquamarine;
+            }
+      
+      .payment-info {
+        margin: 20px;
+      }
+      
+      .qr-code {
+        text-align: center;
+      }
+      
+      .wallet-address {
+        margin-top: 20px;
+      }
+      
+      .wallet-address p {
+        margin: 0;
+      }
+      
+      .wallet-address input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+      }
+      
+      .wallet-address button {
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      
+      .wallet-address button:hover {
+        background-color: #3E8E41;
+      }
+      .alert-a{
+        margin-left: 200px;
+        color: red;
+      }
+      .alert-b{
+        margin-left: 100px;
+        color: rgb(127, 225, 255);
+      }
+
+    </style> 
+  </head>
+  <body>
+    <h1>BITCOIN PAYMENT</h1>
+    <h2 class="alert-a">ALERT!!!</h2 >
+    <p class="alert-b">SINCE YOU DO NOT HAVE ENOUGH BITCOIN TO PURCHASE.<br>COPY THE WALLET ADDRESS CAREFULLY TO PREVENT LOSS OF MONEY.MAKE PAYMENT TO THIS WALLET ADDRESS TO REECEIVE BANK LOG DETAILS SUCCESSFULLY.</p>
+    <div class="payment-info">
+      <p>Scan the QR code or copy the wallet address to make a payment:</p>
+      <div class="qr-code">
+        <!-- Replace the src attribute with the URL to your QR code image -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy&size=200x200" alt="BTC wallet QR code">
+      </div>
+      <div class="wallet-address">
+        <p>Wallet address:</p>
+        <input type="text" value="3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy" id="wallet-address">
+        <button onclick="copyToClipboard()">COPY YOUR DEPOSIT ADDRESS</button>
+      </div>
+      <h3>DEAR CUSTOMER,<br> TAKE NOTE THAT YOU WILL RECEIVE BANK LOG DETAILS IMMEDIATELY AFTER PAYMENT TRANSACTION ID SENT.</h3>
+      <label for="email">Transaction ID:</label>
+			<input type="email" id="email" name="email" placeholder="Enter the transaction ID of payment">
+      <button class="purchase-button">CLICK HERE AFTER PAYMENT TO RECEIVE BANK LOG DETAILS.</button>
+    </div>
+    <script>
+    function copyToClipboard() {
+        var walletAddress = document.getElementById("wallet-address");
+        walletAddress.select();
+        document.execCommand("copy");
+        alert("Copied the wallet address: " + walletAddress.value);
+      }
+      const purchaseButtons = document.querySelectorAll('.purchase-button');
+purchaseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Add code to handle purchase button click here
+    alert("Invalid transaction. Please make the exact payment of log and enter the transaction ID to continue.We would give you the log details after you make payment.")
+  });
+});
+      </script>
+  </body>
+</html>

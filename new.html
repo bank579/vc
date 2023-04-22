@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deposit Balance</title>
+    <style>
+        .container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+h1, h2 {
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+#transactionHistory, #balanceBox {
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#transactionHistory h2, #balanceBox h2 {
+  margin-bottom: 10px;
+}
+
+#status, #balance {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Deposit Balance</h1>
+      <p>Deposit to this wallet address: 3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy</p>
+      <form>
+        <label for="amount">Deposit Amount (in USD):</label>
+        <input type="number" id="amount" name="amount" required>
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+      <div id="transactionHistory">
+        <h2>Transaction History</h2>
+        <p id="status">Pending</p>
+      </div>
+      <div id="balanceBox">
+        <h2>Balance</h2>
+        <p id="balance">-</p>
+      </div>
+    </div>
+    <script>
+        const walletAddress = '3EoLy9Cd1RCLeoVeFKB1cDWbXesqEfWMwy';
+
+const amountInput = document.getElementById('amount');
+const submitBtn = document.getElementById('submitBtn');
+const statusText = document.getElementById('status');
+const balanceText = document.getElementById('balance');
+
+submitBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  const amount = amountInput.value;
+  if (!amount || amount <= 0) {
+    alert('Please enter a valid deposit amount');
+    return;
+ 
+
+    </script>
+  </body>
+</html>
